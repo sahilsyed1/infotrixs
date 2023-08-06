@@ -34,20 +34,28 @@ public class Test {
 			case 2: {
 				System.out.println("Enter Index Number of Employee you want to Update");
 				int index=scn.nextInt();
+				if(index<=-1 || index>=a.size()) {
+					throw new IndexOutOfBoundsException();
+				}
 				a.remove(index);
-				System.out.println("Wait Renter your Updated Details...");
-				Thread.sleep(2000);
-				System.out.println("Enter Employee Id");
-				int id=scn.nextInt();
-				System.out.println("Enter Employee Name");
-				String name=scn.next();
-				System.out.println("Enter Employee age");
-				int age=scn.nextInt();
-				System.out.println("Enter Employee Loc");
-				String loc=scn.next();
-				a.add(index, new Employee(id, name, age, name));
-				Thread.sleep(2000);
-				System.out.println("Employee Updated Successfully!!!");
+				if(a.size()>=1) {
+					System.out.println("Wait Renter your Updated Details...");
+					Thread.sleep(2000);
+					System.out.println("Enter Employee Id");
+					int id=scn.nextInt();
+					System.out.println("Enter Employee Name");
+					String name=scn.next();
+					System.out.println("Enter Employee age");
+					int age=scn.nextInt();
+					System.out.println("Enter Employee Loc");
+					String loc=scn.next();
+					a.add(index, new Employee(id, name, age, name));
+					Thread.sleep(2000);
+					System.out.println("Employee Updated Successfully!!!");
+				}
+				else {
+					System.out.println("Sorry! DataBase is Empty so we cant Update");
+				}
 				break;
 			}
 			case 3: {
@@ -63,13 +71,16 @@ public class Test {
 					}
 				}
 				else {
-					System.out.println("Sorry! DataBase is Empty");
+					System.out.println("Sorry! DataBase is Empty so we cant Delete");
 				}
 				break;
 			}
 			case 4: {
 				System.out.println("Enter Index Number of Employee you want to delete");
 				int index=scn.nextInt();
+				if(index<=-1 || index>=a.size()) {
+					throw new IndexOutOfBoundsException();
+				}
 				a.remove(index);
 				System.out.println("Deleting Employee Results....");
 				Thread.sleep(2000);
