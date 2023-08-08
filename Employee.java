@@ -4,14 +4,14 @@ public class Employee {
 	private int id;
 	private String name;
 	private int age;
-	private String CompanyName;
+	private String location;
 	
-	public Employee(int id, String name, int age, String companyName) {
+	public Employee(int id, String name, int age, String location) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.age = age;
-		CompanyName = companyName;
+		this.location = location;
 	}
 
 	public int getId() {
@@ -38,19 +38,17 @@ public class Employee {
 		this.age = age;
 	}
 
-	public String getCompanyName() {
-		return CompanyName;
+	public String getlocation() {
+		return location;
 	}
 
-	public void setCompanyName(String companyName) {
-		CompanyName = companyName;
+	public void setlocation(String location) {
+		location = location;
 	}
 
 	@Override
 	public String toString() {
-		return " Employee id = " + id + "\n name = " + name + "\n age = " + age + "\n CompanyName = " + CompanyName;
-	}
-	
-	
+		return " Employee id = " + id + "\n name = " + name + "\n age = " + age + "\n location = " + location;
+	}	
 	
 }
